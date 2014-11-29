@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
   has_many :tasks
-  def incomplte_tasks
+  def incomplete_tasks
     tasks.incomplete
   end
 end
