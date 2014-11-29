@@ -5,4 +5,4 @@
     = link_to 'Edit', edit_project_path(project)
     = link_to 'Destroy', project, :data => { confirm: 'Are you sure?' }, :method => :delete
   %ul
-    = render project.incomplete_tasks
+    = render partial:'tasks/task', collection: project.incomplete_tasks
