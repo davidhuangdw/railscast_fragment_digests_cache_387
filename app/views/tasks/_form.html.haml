@@ -4,7 +4,7 @@
   .form-inputs
     = f.input :name
     = f.association :project
-    = f.input :completed_at
+    = f.input :completed_at, as: :string
 
   .form-actions
     = f.button :submit

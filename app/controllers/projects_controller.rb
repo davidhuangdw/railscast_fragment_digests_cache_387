@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = Project.includes(:tasks)
 
     respond_to do |format|
       format.html # index.html.erb

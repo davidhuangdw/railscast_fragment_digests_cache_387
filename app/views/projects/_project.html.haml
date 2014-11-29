@@ -1,0 +1,8 @@
+- cache project do
+  %h2= project.name
+  %p
+    = link_to 'Show', project
+    = link_to 'Edit', edit_project_path(project)
+    = link_to 'Destroy', project, :data => { confirm: 'Are you sure?' }, :method => :delete
+  %ol
+    = render project.tasks

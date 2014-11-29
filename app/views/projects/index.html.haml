@@ -4,19 +4,5 @@
     New Project
   %h1 Listing projects
 
-.table-responsive
-  %table.table.table-striped.table-bordered.table-hover
-    %thead
-      %tr
-        %th Name
-        %th
-        %th
-        %th
+= render @projects
 
-    %tbody
-      - @projects.each do |project|
-        %tr
-          %td= project.name
-          %td= link_to 'Show', project
-          %td= link_to 'Edit', edit_project_path(project)
-          %td= link_to 'Destroy', project, :data => { confirm: 'Are you sure?' }, :method => :delete
