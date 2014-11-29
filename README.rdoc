@@ -1,28 +1,14 @@
-== README
+### fragment digests cache
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+        # development.rb
+          config.action_controller.perform_caching = true
 
-Things you may want to cover:
+        # models/task.rb
+          belongs_to :project, touch:true                   # update project
 
-* Ruby version
+        # check cache dependency
+        rake cache_digests:nested_dependencies TEMPLATE=projects/index
 
-* System dependencies
+        # careful for render partial
+          = render partial:'tasks/task', collection: project.incomplete_tasks
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
